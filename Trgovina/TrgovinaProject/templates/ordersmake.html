@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ordersmake.css' %}">
+    <title>Pravi narudžbu</title>
+</head>
+<body>
+   
+    <form method="post" action="{% url 'ordersmake' %}">
+        {% csrf_token %}
+        
+        <label for="grad">Grad:</label>
+        <input type="text" name="grad" required>
+        <br>
+        
+        <label for="nacin_placanja">Metoda plaćanja:</label>
+        <select name="nacin_placanja" required>
+            <option value="credit_card">Kreditna kartica</option>
+            <option value="paypal">Poduzeće</option>
+            <!-- Add other payment methods as needed -->
+        </select>
+        <br>
+        
+        <input type="submit" value="Create Order">
+    </form>
+
+</body>
+</html>

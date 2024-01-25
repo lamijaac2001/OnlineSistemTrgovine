@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ordershistory.css' %}">
+    <title>Historija narudžbi</title>
+</head>
+<body>
+    
+{% block content %}
+    <h2>Historija Narudžbi</h2>
+    {% if narudzbe %}
+        <ul>
+            {% for narudzba in narudzbe %}
+                <li>
+                    Narudžba broj: {{ narudzba.id }}
+                    
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nemate prethodnih narudžbi.</p>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>

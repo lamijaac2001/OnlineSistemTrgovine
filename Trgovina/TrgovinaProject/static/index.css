@@ -1,0 +1,82 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe6f2; /* Light pink background */
+    color: #333;
+}
+
+header {
+    background-color: #ffb3d9; /* Lighter pink header background */
+    padding: 20px;
+    text-align: center;
+}
+
+header p {
+    font-size: 24px;
+    color: #ff3385; /* Darker pink text color */
+    margin-bottom: 10px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff3385;
+}
+
+section {
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #ff3385;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #ffb3d9;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 600px) {
+    header p {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+
+

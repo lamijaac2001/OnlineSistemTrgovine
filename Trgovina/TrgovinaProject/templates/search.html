@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'search.css' %}">
+    <title>Rezultati pretrage</title>
+</head>
+<body>
+
+<h2>Rezultati pretrage za: "{{ query }}"</h2>
+
+<!-- Forma za pretragu -->
+<form method="get" action="{% url 'search' %}">
+    {% csrf_token %}
+    <input type="text" name="q" placeholder="Unesite ključne reči" value="{{ query }}">
+    <button type="submit">Pretraži</button>
+</form>
+
+{% if proizvodi %}
+    {% for proizvod in proizvodi %}
+        <p>{{ proizvod.naziv_proizvoda }} - {{ proizvod.cijena }} KM</p>
+        
+    {% endfor %}
+{% else %}
+    <p>Nema rezultata za pretragu.</p>
+{% endif %}
+
+</body>
+</html>

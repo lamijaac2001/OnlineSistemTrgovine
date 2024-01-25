@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'products.css' %}">
+    <title>Proizvodi</title>
+</head>
+<body>
+    
+
+{% block content %}
+  <h2>Dostupni Proizvodi</h2>
+  <ul>
+    {% for proizvod in proizvodi %}
+      <li>
+        {{ proizvod.naziv_proizvoda }} - {{ proizvod.cijena }}  <a href="{% url 'dodaj_u_korpu' proizvod.id %}">Dodaj u korpu</a>
+      </li>
+    {% endfor %}
+  </ul>
+ 
+
+    
+{% endblock %}
+
+
+</body>
+</html>

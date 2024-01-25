@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'orders.css' %}">
+    <title>Narudžbe</title>
+</head>
+<body>
+    {% block content %}
+    <h2>Vaše Narudžbe</h2>
+    {% if narudzbe %}
+        <ul>
+            {% for narudzba in narudzbe %}
+                <li>
+                    Narudžba broj: {{ narudzba.id }}<br>
+                    Datum: {{ narudzba.datum_narudzbe }}<br>
+                    Ukupna cijena: {{ narudzba.ukupna_cijena }} KM<br>
+                    
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nemate nijednu narudžbu.</p>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Trgovina</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+    <header>
+        <p>"Online Trgovina"</p>
+        {% if user.is_authenticated %}
+            <p>Dobrodošao/la, {{ user.ime }}!</p>
+        {% endif %}
+        <nav>
+            <a href="{% url 'search' %}">Pretraga proizvoda</a>
+          
+            <a href="{% url 'orders' %}">Pregled narudzbi</a>
+            
+            <a href="{% url 'ordersmake' %}">Napravi narudzbu</a>
+            <a href="{% url 'ordershistory' %}">Istorija narudzbi</a>
+            <a href="{% url 'products' %}">Prikaži proizvode</a>
+          
+          
+            
+        </nav>
+    </header>
+
+    <section>
+        <h1>Dobro došli u Online Trgovinu</h1>
+        <p>Naša aplikacija nudi široku paletu proizvoda prilagođenih vašim potrebama, bilo da tražite modu, tehnologiju, ili nešto sasvim drugačije.
+
+            Šta možete očekivati:
+            
+           Raznolikost Proizvoda: Pretražujte našu raznoliku ponudu proizvoda, od trendi odjeće do vrhunske tehnologije.
+            
+        Personalizirane Preporuke: Naša pametna tehnologija prilagođava preporuke vašim interesima, čineći vaš shopping doživljaj još ugodnijim.
+            
+         Brza Dostava: Uživajte u brzoj i pouzdanoj dostavi do vaših vrata, donoseći vam željene proizvode u najkraćem mogućem roku.
+            
+        Recenzije i Ocjene: Pročitajte iskustva drugih kupaca i podijelite svoje, pomažući zajednici da donese informirane odluke.
+            
+         Sigurnost Plaćanja: Obezbijedili smo sigurne opcije plaćanja kako biste bezbrižno mogli uživati u svojim kupovinama.</p>
+    </section>
+
+    <!-- Ovde možete dodati sadržaj stranice prema potrebi -->
+
+    <footer>
+        <p>&copy; 2023 Online trgovina. Sva prava zadržana.</p>
+    </footer>
+
+</body>
+</html>
+

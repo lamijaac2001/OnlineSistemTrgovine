@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korpa</title>
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+</head>
+<body>
+
+
+    {% block content %}
+      <h2>Vaša Korpa</h2>
+      <ul>
+        {% for proizvod in proizvodi_u_korpi %}
+          <li>
+            {{ proizvod.naziv_proizvoda }} - {{ proizvod.cijena }}  <a href="{% url 'ukloni_iz_korpe' proizvod.id %}">Ukloni iz korpe</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+    
+</body>
+</html>
